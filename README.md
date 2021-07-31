@@ -1,2 +1,2 @@
 # pdo-project
-A simple wrapper for PHP Data Objects
+A simple wrapper for PHP Data Objects (PDO)
