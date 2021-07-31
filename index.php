@@ -2,17 +2,17 @@
     require_once('./vendor/autoload.php');
     require_once('./classes/pdo.class.php');
 
-
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
 
-    $query = new pdoData();
+    $db = new pdoData();
 
-    if($query->connect()) {
-        echo 'Hot diggity damn!';
+    if($db->connect()) {
+        echo "Hot diggity damn!\n";
+        $db->close();
     }
     
-    if($query->error()) {
-        echo $query->error();
+    if($db->error()) {
+        echo $db->error();
     }
 
