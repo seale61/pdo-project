@@ -19,8 +19,13 @@ class pdoData {
 
             $this->dbconn = new PDO($dsn, $user, $pass);
 
-            $this->dbconn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+            // By default, return data in object format
+            $this->dbconn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
+
+            // Set emulation to false so that we can specify "LIMIT" in SELECT statements
             $this->dbconn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+            // Give us useful PDO error messages when exceptions occur
             $this->dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             return $this->connect();
