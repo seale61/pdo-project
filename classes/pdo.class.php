@@ -1,4 +1,11 @@
 <?php
+/*
+    File name:  pdo.class.php
+    Author:     Charles Seale
+    Created:    Aug. 2021
+    Copyright:  2021, Charles Seale 
+
+*/
 
 class pdoData {
 
@@ -9,6 +16,13 @@ class pdoData {
     private $fetchType  = null;  // PDO::FETCH_OBJ is the default
 
     function __construct($dsn=NULL, $user=NULL, $pass=NULL) {
+
+        /**
+         *   If a dns string is passed in, the class will attempt to use it. 
+         *   If no dns string is included, no other parameters are checked. The
+         *   class will then instantiate using it's default database configuration 
+         *   whose values are found in the environment variables.
+        */
 
         if (!$dsn) {
 
@@ -53,7 +67,11 @@ class pdoData {
 
         $this->fetchType = $fetchType;
 
-        // If query type is not permitted, an error message will be returned
+        /* 
+            If query type is not permitted, an error message will be returned.
+            Supported query types are INSERT, SELECT, UPDATE, DELETE, CALL. 
+        */
+
         $this->setSqlType($sql);
 
         if($this->errormsg) {
@@ -70,7 +88,6 @@ class pdoData {
     public function data() {
 
         $fetchMode = null;
-        //echo $this->fetchType;
 
         switch($this->fetchType) {
 
