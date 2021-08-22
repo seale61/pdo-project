@@ -1,10 +1,10 @@
 <?php
-/*
-    File name:  pdo.class.php
-    Author:     Charles Seale
-    Created:    Aug. 2021
-    Copyright:  2021, Charles Seale 
-
+/**
+ *   File name:  pdo.class.php
+ *   Author:     Charles Seale
+ *   Created:    Aug. 2021
+ *   Copyright:  2021, Charles Seale 
+ * 
 */
 
 class pdoData {
