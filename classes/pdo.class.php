@@ -26,7 +26,7 @@ class pdoData {
 
         if (!$dsn) {
 
-            $dsn  = 'mysql:host='.$_ENV['DB_HOST'].';dbname='.
+            $dsn  = $_ENV['DB_DRIVER'].':host='.$_ENV['DB_HOST'].';dbname='.
                     $_ENV['PRIMARY_DATABASE'].';charset='.
                     $_ENV['CHARSET_DEFAULT'];
             
